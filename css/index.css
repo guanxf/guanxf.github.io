@@ -1,0 +1,862 @@
+
+*{
+	margin: 0;
+	padding: 0;
+}
+html{
+	height: 100%;
+}
+body{
+	height: 100%;
+	overflow: hidden;
+	font-family: Arial ,"Microsoft Yahei", "宋体";
+}
+.body{
+	height: 100%;
+}
+
+/*header部分*/
+.header{
+	position: fixed;
+	height: 60px;
+	width: 100%;
+	z-index: 999;
+	background-color: rgba(21,37,39,.3);
+}
+.inner{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.header .container .logo{
+	float: left;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	padding-left: 100px;
+}
+.header .container .logo img{
+	margin-top: 5px;
+}
+.header .container .nav{
+	float: right;
+	height: 60px;
+	margin-right: 20px;
+}
+.header .container .nav ul{
+	list-style: none;
+}
+
+.header .container .nav li{
+	float: left;
+	height: 60px;
+	padding: 0 20px;
+	font-size: 18px;
+	color: #e8e8e8;
+	text-align: center;
+	line-height: 60px;
+	position: relative;
+	transition:all 0.3s linear 0s;
+}
+.header .container .nav li a{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;	
+	height: 60px;
+	border-top: 3px solid transparent;
+	border-bottom: 3px solid transparent;
+	cursor:pointer;
+	transition:all 0.3s linear 0s;
+}
+.header .container .nav li:hover{
+	color: #ffd200;
+}
+.header .container .nav li.current{
+	color: #ffd200;
+}
+.header .container .nav li.current a{
+	margin-top: 7px;
+	height:40px;
+	border-top: 3px solid #ffd200;
+	border-bottom: 3px solid #ffd200;
+}
+
+.main{
+	margin: 0 auto;
+	height: 100%;
+	position: relative;
+}
+
+/*canvas*/
+canvas{
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 666;
+}
+
+.main .content{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-transition:all 1s cubic-bezier(0.71, 0.01, 0.71, 0.99) 0s;
+	transition:all 1s cubic-bezier(0.71, 0.01, 0.71, 0.99) 0s;
+}
+
+.main .content .page{
+	height: 100%;
+	text-align: center;
+	line-height: 500%;
+	overflow: hidden;
+
+}
+.main .content .page0{
+	background: url(../images/bg7.jpg);
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.main .content .page1{
+	background: url(../images/bg2.jpg);
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.main .content .page2{
+	/*background: url(../images/bg.jpg);
+	-webkit-background-size: cover;
+	background-size: cover;*/
+	background-color: #333;
+}
+.main .content .page3{
+	background: url(../images/bg.jpg);
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.main .content .page4{
+	background: url(../images/bg12.jpg);
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.main .content .page5{
+	background: url(../images/bg10.jpg);
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+/*小圆点*/
+.main .sub_nav{
+	position: fixed;
+	width: 18px;
+	right: 50px;
+	top: 50%;
+	-webkit-transform:translateY(-50%);
+	transform:translateY(-50%);
+}
+.main .sub_nav ol{
+	list-style: none;
+}
+.main .sub_nav ol li{
+	width: 18px;
+	height: 18px;
+	margin-bottom: 20px;
+	text-align: center;
+	cursor: pointer;
+}
+.main .sub_nav ol li span{
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	text-align: center;
+	background-color: #b7b7b7;
+	-webkit-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	-ms-transition: all 0.5s ease-out;
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+.main .sub_nav ol li.current span{
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background-color:#ffd200;
+}
+
+/*第1页*/
+.main .page_c{
+	height: 100%;
+	position: relative;
+}
+.page .title{
+	height: 80px;
+	padding-top: 80px;
+	/*margin-bottom: 20px;*/
+}
+.page .title1{
+	padding-top: 250px;
+}
+.page .title h3{
+	font-size: 50px;
+	line-height: 80px;
+	text-align: center;
+	color: #fff;
+}
+
+.page0 .title h3{
+	font-size: 60px;
+	background-image: -webkit-linear-gradient(left, #167993, #fbe500 25%, #167993 50%, #fbe500 75%, #167993);
+	background-size: 200% 100%;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	-webkit-animation: mask 4s linear 1.5s infinite ;
+}
+@-webkit-keyframes mask {
+	0%  { background-position: 0 0;}
+	100% { background-position: -100% 0;}
+}
+.page0 .line{
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+	position: relative;
+	perspective:100px;
+}
+
+.page0 .line .circle{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background-color: #fff;
+	/*animation: Beat 0.8s ease-in-out -0.4s infinite alternate;*/
+}
+@-webkit-keyframes Beat{
+	0%{
+		transform :  translateX(-30px);
+	}
+	100%{
+		transform : translateX(30px);
+	}
+}
+.page0 .line .L_Line{
+	position: absolute;
+	left: 0;
+	top: 14px;
+	height: 2px;
+	background-color: #fff;
+	width: 450px;
+}
+
+.page0 .line .R_Line{
+	position: absolute;
+	right: 0;
+	top: 14px;
+	height: 2px;
+	background-color: #fff;
+	width: 450px;
+}
+.pic{
+	position: absolute;
+	left: 50%;
+	bottom: 50px;
+	margin-left: -25px;
+	display: none;
+	/*animation:down 1s ease-in-out -0.1s infinite alternate;*/
+}
+@-webkit-keyframes down{
+	0%{	
+		transform:translateY(0px);
+	}
+	100%{
+		transform:translateY(30px);
+	}
+}
+
+/*第2页*/
+
+.exp{
+	height: 430px;
+	position: relative;
+}
+.exp .lineBox{
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+}
+.exp .lineBox .line{
+	position: absolute;
+	left: 50%;
+	top: -430px;
+	margin-left: -1px;
+	border-left: 1px dashed #fff;
+	border-right: 1px dashed #fff;
+	height: 860px;
+	animation:run 10s linear -0.1s infinite;
+}
+@-webkit-keyframes run{
+	0%{
+		top: -430px;
+	}
+	100%{
+		top: 0;
+	}
+}
+.exp .int{
+	position: absolute;
+	width: 500px;
+	height: 100px;
+
+}
+.exp .introduce1{
+	left: 10px;
+	top: 15px;
+}
+.exp .cont{
+	float: left;
+	height: 100px;
+}
+.exp .info{
+	width: 330px;
+	padding: 0 10px;
+	color: #eee;
+	text-align: left;
+	background-color: rgba(150,203,237,0.5);
+	transition:all 0.5s ease 0s;
+	border-radius: 5px;
+}
+.exp .int:hover .info{
+	color: #fff;
+	background-color: rgba(150,203,237,0.2);
+	box-shadow: 4px 4px 4px #000;
+}
+.exp .info h4{
+	font-size: 16px;
+	line-height: 30px;
+}
+.exp .info p{
+	font-size: 12px;
+	line-height: 20px;
+}
+.exp .info_L{
+	width: 130px;
+}
+.exp .info_L span.year{
+	color: #ccc;
+	font-size: 16px;
+	padding-top: 20px;
+}
+.exp .info_L span.L{
+	font-size: 0;
+	padding: 1px 65px;
+	background-color: #ccc;
+	position: relative;
+	top: -60px;
+}
+.exp .int:hover span.L,
+.exp .int:hover span.C{
+	background-color: #ffd200;
+}
+.exp .int:hover span.year{
+	color: #ffd200;
+}
+.exp .info_C{
+	width: 20px;
+}
+.exp .info_C span.C{
+	padding: 10px;
+	font-size: 0;
+	background-color: #75eae5;
+	border-radius: 50%;
+	position: relative;
+	top: 20px;
+}
+.exp .cont span.show{
+	display: none;
+}
+
+.exp .introduce2{
+	left: 490px;
+	top: 105px;
+}
+.exp .introduce2 .cont{
+	float: right;
+	height: 100px;
+}
+
+.exp .introduce3{
+	left: 10px;
+	top: 195px;
+}
+.exp .introduce3 .cont{
+	float: left;
+	height: 100px;
+}
+
+.exp .introduce4{
+	left: 490px;
+	top: 285px;
+}
+.exp .introduce4 .cont{
+	float: right;
+	height: 100px;
+}
+
+
+
+/*第3页*/
+
+.page2 .project ul{
+	list-style: none;
+}
+.page2 .project li{
+	float: left;
+	width: 220px;
+	height: 180px;
+	margin-right: 30px;
+	margin-bottom: 30px;
+	position: relative;
+	transition:all 1s ease 0s;
+	perspective:400px;
+	overflow: hidden;
+	border-radius: 8px;
+}
+.page2 .project li:hover{
+	box-shadow: 10px 10px 10px black;
+
+}
+.page2 .project li .mask{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,.7);
+	transition:all 1s ease 0s;
+}
+.page2 .project li:hover .mask{
+	background-color:transparent;
+	box-shadow: 0px 2px 8px black;
+}
+
+.page2 .project li img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition:all 1s ease 0s;
+	backface-visibility:hidden;
+}
+.page2 .project li .back{
+	position: absolute;
+	width: 100%;
+	height: 30px;
+	bottom: 100px;
+	left: -100%;
+	text-align: center;
+	line-height: 30px;
+	font-size: 18px;
+	color: #fff;
+	transition:all 0.8s ease 0s;
+	transform: rotateY(180deg);
+}
+.page2 .project li:hover .back{
+	transform: rotateY(0deg) scale(1.5);
+}
+.page2 .project li:hover .front{
+	transform: rotateY(180deg) scale(1.5);
+
+}
+/*.page2 .project li h4{
+	position: absolute;
+	width: 100%;
+	height: 30px;
+	bottom: 100px;
+	left: -100%;
+	text-align: center;
+	line-height: 30px;
+	font-size: 18px;
+	color: #fff;
+	transition:all 0.8s ease 0s;
+}*/
+.page2 .project li:hover h4 {
+	left: 0;
+}
+.page2 .project li p{
+	position: absolute;
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	font-size: 14px;
+	bottom: 60px;
+	left: 0px;
+	color: #fff;
+}
+
+/*最后一页*/
+.page5 .contact {
+	padding-top: 50px;
+}
+.page5 .contact .top{
+	padding:0 60px;
+}
+.page5 .contact .top li{
+	float: left;
+	width: 160px;
+	height: 160px;
+	margin-right: 80px;
+	font-size: 16px;
+	font-weight: bold;
+	position: relative;
+	color: #fff;
+}
+.page5 .contact .top li:last-child{
+	margin-right: 0px;
+}
+.page5 .contact .top li .stay{
+	width: 160px;
+	height: 60px;
+	line-height: 60px;
+	padding-top: 100px;
+	margin-right: 80px;
+	text-align: center;
+	position: relative;
+	transition:all 1s ease 0s;
+	background-repeat: no-repeat;
+	background-position: 50% 30%;
+	color: #fff;
+	z-index: 2;
+}
+.page5 .contact .top li span{
+	margin: 0 auto;
+	display: block;
+	width: 100px;
+	line-height: 25px;
+}
+.page5 .contact .top li:nth-child(1) span,
+.page5 .contact .top li:nth-child(2) span{
+	padding-top: 12px;
+}
+.page5 .contact .top li::before{
+	content:'';
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 30px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition:all 1s ease 0s;
+	background-repeat: no-repeat;
+	background-position: 50% 25%;
+	box-shadow: 0 2px 20px #fff;
+	color: #fff;
+	transform:rotate(45deg);
+}
+.page5 .contact .top li:first-child .stay{
+	background-image: url(../images/tel1.png);
+}
+.page5 .contact .top li:nth-child(2) .stay{
+	background-image: url(../images/qq1.png);
+}
+.page5 .contact .top li:nth-child(3) .stay{
+	background-image: url(../images/mail1.png);
+}
+.page5 .contact .top li:last-child .stay{
+	background-image: url(../images/wechat1.png) ;
+}
+.page5 .contact .top li:first-child:hover .stay{
+	color: #000;
+	background-image: url(../images/tel2.png);
+}
+.page5 .contact .top li:nth-child(2):hover .stay{
+	color: #000;
+	background-image: url(../images/qq2.png) ;
+}
+.page5 .contact .top li:nth-child(3):hover .stay{
+	color: #000;
+	background-image: url(../images/mail2.png) ;
+}
+.page5 .contact .top li:last-child:hover .stay{
+	color: #000;
+	background-image: url(../images/wechat2.png);
+}
+
+.page5 .contact .top li::before{
+	background-image:-webkit-radial-gradient(center center,#fff,#333);
+}
+
+.page5 .contact .top li:hover::before{
+	background-image: -webkit-radial-gradient(center center,#ccc,#fff);
+}
+
+
+#allmap{
+	height: 400px;
+	width: 400px;
+}
+
+/*.contact11 {
+	background: #333 url(.\./images/contactBg.jpg) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+}
+
+.contact .content .contactMain {
+	max-width: 1280px;
+	min-width: 1080px;
+	height: 540px;
+	margin: 0 auto;
+}
+
+.contact .content .contactMain .partTitle {
+	width: 300px;
+	margin: 0 auto;
+	text-align: center;
+	margin: 0;
+}
+
+.contact .content .contactMain .partTitle .partTitleTop .decorate {
+	font-size: 68px;
+	color: #17a4e5;
+	padding-right: 6px;
+}
+
+.contact .content .contactMain .partTitle .partTitleTop .text {
+	font-size: 42px;
+	color: #17a4e5;
+	letter-spacing: 2px;
+}
+
+.contact .content .contactMain .partTitle .partTitleBottom {
+	color: #c5c5c5;
+	font-size: 14px;
+}
+
+.contact .content .contactMain .partTitle .partTitleTop .decorate {
+	color: #eaeaea;
+}
+
+.contact .content .contactMain .partTitle .partTitleTop .text {
+	color: #eaeaea;
+}
+
+.contact .content .contactMain .contactMethod {
+	float: left;
+	width: 360px;
+	padding: 100px 0 0 140px;
+	height: 400px;
+}
+
+.contact .content .contactMain .contactMethod .title {
+	color: #17a4e5;
+	font-size: 16px;
+	line-height: 60px;
+}
+
+.contact .content .contactMain .contactMethod p {
+	line-height: 32px;
+	font-size: 14px;
+	color: #eaeaea;
+	letter-spacing: 2px;
+}
+
+.contact .content .contactMain .contactMethod .contactIcon {
+	padding-top: 18px;
+	padding-left: 30px;
+}
+
+.contact .content .contactMain .contactMethod .contactIcon a {
+	float: left;
+	width: 22px;
+	height: 22px;
+	padding: 4px;
+	margin-right: 12px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	background-color: #999;
+	-webkit-transition: all 2s ease 0s;
+	-moz-transition: all 2s ease 0s;
+	transition: all 2s ease 0s;
+}
+
+.contact .content .contactMain .contactMethod .contactIcon a span {
+	display: inline-block;
+	margin: 3px;
+	width: 16px;
+	height: 16px;
+}
+
+.contact .content .contactMain .contactMethod .contactIcon a.weixin span {
+	background: url(.\./images/contactIcon.png) no-repeat -16px 0;
+}
+
+.contact .content .contactMain .contactMethod .contactIcon a.qq span {
+	background: url(.\./images/contactIcon.png) no-repeat 0 0;
+}
+
+.contact .content .contactMain .contactMethod .contactIcon a.phone span {
+	background: url(.\./images/contactIcon.png) no-repeat -32px 0;
+}
+
+.contact .content .contactMain .contactMethod .contactIcon a:hover {
+	-webkit-transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
+	transform: rotate(360deg);
+}
+
+.contact .content .contactMain .messagePad {
+	float: right;
+	padding-top: 40px;
+	padding-right: 100px;
+	width: 440px;
+	height: 400px;
+}
+
+.contact .content .contactMain .messagePad .boardBox {
+	height: 400px;
+	padding: 0 40px;
+	background-color: rgba(255,255,255,.8);
+}
+
+.contact .content .contactMain .messagePad .boardBox .welcome {
+	line-height: 100px;
+	font-size: 30px;
+	color: #333;
+	text-align: center;
+}
+
+.contact .content .contactMain .messagePad .boardBox .inputBox {
+	height: 40px;
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 14px;
+}
+
+.contact .content .contactMain .messagePad .boardBox .inputBox.areaBox {
+	height: 86px;
+}
+
+.contact .content .contactMain .messagePad .boardBox .inputBox.areaBox textarea {
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	height: 84px;
+	line-height: 21px;
+	border: 0;
+	background: 0 0;
+	outline: 0;
+	border-bottom: 2px solid #bbb;
+	resize: none;
+}
+
+.contact .content .contactMain .messagePad .boardBox .inputBox.areaBox textarea.on~.tip {
+	left: 80%;
+	color: #17a4e5;
+	-webkit-transition: all .8s cubic-bezier(0,.72,.12,1.6) 0s;
+	-moz-transition: all .8s cubic-bezier(0,.72,.12,1.6) 0s;
+	transition: all .8s cubic-bezier(0,.72,.12,1.6) 0s;
+}
+
+.contact .content .contactMain .messagePad .boardBox .inputBox.areaBox textarea.err~.tip {
+	color: #D31010;
+}
+
+.contact .content .contactMain .messagePad .boardBox .inputBox.areaBox textarea.on~.line {
+	left: 0;
+	-webkit-transition: all .8s ease 0s;
+	-moz-transition: all .8s ease 0s;
+	transition: all .8s ease 0s;
+}
+
+.contact .content .contactMain .messagePad .boardBox .inputBox.areaBox textarea.err~.line {
+	left: 0;
+	background-color: #D31010;
+}
+
+.contact .content .contactMain .messagePad .boardBox .inputBox input {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 38px;
+	line-height: 38px;
+	border: 0;
+	outline: 0;
+	background: 0 0;
+	font-size: 16px;
+	text-indent: 4px;
+	color: #666;
+	border-bottom: 2px solid #bbb;
+}
+
+.contact .content .contactMain .messagePad .boardBox .inputBox input.on~.tip {
+	left: 80%;
+	color: #17a4e5;
+	-webkit-transition: all .8s cubic-bezier(0,.72,.12,1.6) 0s;
+	-moz-transition: all .8s cubic-bezier(0,.72,.12,1.6) 0s;
+	transition: all .8s cubic-bezier(0,.72,.12,1.6) 0s;
+}
+
+.contact .content .contactMain .messagePad .boardBox .inputBox input.err~.tip {
+	color: #D31010;
+}
+
+.contact .content .contactMain .messagePad .boardBox .inputBox input.on~.line {
+	left: 0;
+	-webkit-transition: all .8s ease 0s;
+	-moz-transition: all .8s ease 0s;
+	transition: all .8s ease 0s;
+}
+
+.contact .content .contactMain .messagePad .boardBox .inputBox input.err~.line {
+	left: 0;
+	background-color: #D31010;
+}
+
+.contact .content .contactMain .messagePad .boardBox .inputBox .tip {
+	position: absolute;
+	width: 80px;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 4px;
+	left: 0;
+	top: 0;
+	color: #999;
+}
+
+.contact .content .contactMain .messagePad .boardBox .inputBox .line {
+	position: absolute;
+	z-index: 2;
+	left: -100%;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+	background-color: #17a4e5;
+}
+
+.contact .content .contactMain .messagePad .boardBox .submitBox {
+	height: 40px;
+}
+
+.contact .content .contactMain .messagePad .boardBox .submitBox input {
+	border: 0;
+	height: 36px;
+	line-height: 36px;
+	background-color: #17a4e5;
+	width: 100%;
+	color: #eaeaea;
+	cursor: pointer;
+	-webkit-transition: all .5s ease 0s;
+	-moz-transition: all .5s ease 0s;
+	transition: all .5s ease 0s;
+}
+
+.contact .content .contactMain .messagePad .boardBox .submitBox input:disabled {
+	background: #444;
+}*/
